@@ -8,19 +8,20 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/jinzhu/gorm"
 )
-import _ "github.com/mattn/go-sqlite3"
+import _ "github.com/lib/pq"
 
 var db *gorm.DB
 
 func main() {
-	vapedb, err := gorm.Open("sqlite3", "vape.db")
+	dbConString := "postgres://" + AppConf.DBUsername + ":" + AppConf.DBPassword + "@" + AppConf.DBID
+	vapedb, err := gorm.Open("postgres", dbConString)
 	if err != nil {
 		panic(err.Error())
 	}
 	defer vapedb.Close()
 
 	db = vapedb
-	db.CreateTable(&Vape{})
+	// db.CreateTable(&Vape{})
 	// db.Create(&Vape{})
 
 	r := mux.NewRouter()
