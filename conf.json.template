@@ -1,0 +1,6 @@
+{
+		"DBID": "<db url with port>",
+		"DBUsername": "<db username>",
+		"DBPassword": "<db pass>"
+
+}
