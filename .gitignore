@@ -26,7 +26,11 @@ Status API Training Shop Blog About
 
 *.swp
 *.db
+# Config file for DB connection
 conf.json
+
+#Docker
+.dockerignore
 
 # Elastic Beanstalk Files
 .ebignore
