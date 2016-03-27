@@ -1,8 +1,0 @@
-version: v0.1
-containers:
-- name: vape
-  image: tmaffia/vape
-  ports:
-  - name: http
-    hostPort: 80
-    containerPort: 8080
