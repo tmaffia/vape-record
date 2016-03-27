@@ -4,4 +4,10 @@ $(document).ready(function() {
 			location.reload();
 			});
 	});
+
+	$('.delete-last-record').click(function() {
+		$.get("api/delete-vape", function() {
+			location.reload();
+			});
+	});
 });
