@@ -13,7 +13,8 @@ import _ "github.com/lib/pq"
 var db *gorm.DB
 
 func main() {
-	dbConString := "postgres://" + AppConf.DBUsername + ":" + AppConf.DBPassword + "@" + AppConf.DBID
+	dbConString := "postgres://" + AppConf.DBUsername + ":" +
+		AppConf.DBPassword + "@" + AppConf.DBID
 	vapedb, err := gorm.Open("postgres", dbConString)
 	if err != nil {
 		panic(err.Error())
