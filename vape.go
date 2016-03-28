@@ -28,6 +28,7 @@ func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", HomeHandler)
 	r.HandleFunc("/api/vape", VapeHandler)
+	r.HandleFunc("/api/delete-vape", VapeDeleteHandler)
 	r.PathPrefix("/").Handler(http.FileServer(http.Dir("public/")))
 	http.Handle("/", r)
 
@@ -54,6 +55,12 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 func VapeHandler(w http.ResponseWriter, r *http.Request) {
 	v := &Vape{}
 	db.Create(v)
+}
+
+func VapeDeleteHandler(w http.ResponseWriter, r *http.Request) {
+	v := &Vape{}
+	db.Last(v)
+	db.Delete(v)
 }
 
 func GetTotalVapes() int {
