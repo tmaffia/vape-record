@@ -1,6 +1,13 @@
 # vape-record
 Web based vaping tracker. Tracks your vaping habits
 
+## Requirements
+
+* Go
+* PostgreSQL
+* Bower
+* Docker (Optional)
+
 ## Install
 
 #### Install using `go get`
@@ -15,7 +22,11 @@ Web based vaping tracker. Tracks your vaping habits
 
 #### Clone the [front-end](https://github.com/tmaffia/vape-record-front-end) into a directory named "public"
 
-`git clone https://github.com/tmaffia/vape-record-front-end.git public`
+```
+git clone https://github.com/tmaffia/vape-record-front-end.git public
+cd public
+bower install
+```
 
 ## Deploy
 
